@@ -1,0 +1,65 @@
+/** Interior pages — hero band, narrow prose column */
+.page-hero {
+  background: var(--navy-2);
+  border-bottom: 2px solid rgba(200, 169, 110, 0.3);
+  padding: 3.5rem 0 3rem;
+}
+
+.page-hero .eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.65rem;
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: #f2eee2;
+  margin-bottom: 0.85rem;
+  line-height: 0.96;
+}
+
+.page-hero .sub,
+.page-hero .last-updated {
+  color: rgba(242, 238, 226, 0.65);
+  font-size: 1rem;
+  max-width: 52ch;
+  margin: 0;
+}
+
+.page-hero .last-updated {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  margin-top: 0.5rem;
+}
+
+.page-hero-inner {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.content-wrap {
+  max-width: 760px;
+  margin-inline: auto;
+  padding: 3.5rem 0 5rem;
+}
+
+.donate-payment-note {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.6rem;
+  color: rgba(243, 238, 226, 0.4);
+  line-height: 1.65;
+  margin-top: 0.5rem;
+}
+
+.donate-payment-note strong {
+  color: rgba(243, 238, 226, 0.65);
+}
+
+.prose-list {
+  margin: 0.5rem 0 0.5rem 1.4rem;
+  color: inherit;
+}

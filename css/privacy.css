@@ -1,0 +1,114 @@
+/* Privacy policy page */
+.privacy-page {
+  background: var(--bg);
+}
+
+.privacy-page .content-wrap {
+  padding-inline: 0;
+}
+
+.summary-box {
+  background: var(--bg-card);
+  border-left: 3px solid var(--teal);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+}
+
+.summary-box p {
+  margin: 0;
+  color: var(--text);
+}
+
+.policy-section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.policy-section:last-of-type {
+  border-bottom: none;
+}
+
+.section-num {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.policy-section h2 {
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
+}
+
+.policy-section p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.policy-section p:last-child {
+  margin-bottom: 0;
+}
+
+.policy-section ul {
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding-left: 1.25rem;
+  margin: 0 0 0.75rem;
+}
+
+.policy-section ul li {
+  margin-bottom: 0.4rem;
+}
+
+.policy-section a {
+  color: var(--accent-soft);
+}
+
+.policy-section code {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85em;
+}
+
+.highlight {
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent);
+  padding: 0.9rem 1.1rem;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.contact-block {
+  background: var(--navy);
+  color: #f2eee2;
+  padding: 1.75rem 2rem;
+  margin-top: 3rem;
+}
+
+.contact-block h3 {
+  color: var(--accent);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-block p {
+  font-size: 0.88rem;
+  color: rgba(242, 238, 226, 0.7);
+  margin-bottom: 0.5rem;
+}
+
+.contact-block a {
+  color: var(--accent);
+}
+
+.contact-block a:hover {
+  color: #f2eee2;
+}

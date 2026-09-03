@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Subscription confirmed. Liar's Ledger Pro is now active on your install.">
+  <title>You're Pro | Liar's Ledger</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/pricing.css">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div id="chrome-header"></div>
+  <script src="../js/site-config.js"></script>
+  <script src="../js/chrome-templates.js"></script>
+  <script src="../js/chrome-inject.js" data-chrome="header"></script>
+
+  <main id="main-content">
+    <div class="page-hero">
+      <div class="container lg:px-16">
+        <p class="eyebrow">Subscription confirmed</p>
+        <h1>You're Pro.</h1>
+        <p class="sub">Your install token has already been upgraded. No further action needed.</p>
+      </div>
+    </div>
+
+    <section class="pricing-page">
+      <div class="container lg:px-16">
+
+        <div class="tiers-wrap" style="grid-template-columns: 1fr; max-width: 520px; margin-inline: auto;">
+          <div class="tier-card featured">
+            <span class="tier-badge">Active</span>
+            <h2>Pro</h2>
+            <ul>
+              <li>Your subscription is live and billing has started</li>
+              <li>AI-generated article summaries are now unlocked</li>
+              <li>Claim-vs-record verdicts are now unlocked</li>
+              <li>VoteSmart ratings &amp; vote history, already free for everyone</li>
+            </ul>
+          </div>
+        </div>
+
+        <p id="subIdLine" style="text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; color: rgba(243,238,226,0.45); margin-top: 1.5rem;" hidden>
+          Subscription reference: <span id="subIdValue"></span>
+        </p>
+
+        <div class="bottom-row" style="margin-top: 3rem;">
+          <div class="faq">
+            <h3>What happens now</h3>
+            <div class="faq-item">
+              <p class="faq-q">Do I need to do anything else?</p>
+              <p class="faq-a">No. The upgrade already happened automatically when your payment was confirmed. This page is just a receipt, not a step you need to complete. Open the extension popup and your Account panel should already show Pro.</p>
+            </div>
+            <div class="faq-item">
+              <p class="faq-q">The popup still shows Free. What now?</p>
+              <p class="faq-a">This is occasionally just a sync delay. Close and reopen the popup, or run one more scan, which refreshes your tier from the server. If it's still showing Free after that, see the <a href="/faq">full FAQ</a> or <a href="mailto:contact@liarsledger.com">contact us</a> with your subscription reference above.</p>
+            </div>
+            <div class="faq-item">
+              <p class="faq-q">Where's my receipt?</p>
+              <p class="faq-a">Square sends a payment receipt to the email you entered at checkout. That's separate from this page and comes directly from Square, not from us.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="chrome-footer"></div>
+  <script src="../js/chrome-inject.js" data-chrome="footer"></script>
+
+  <script src="../js/script.js"></script>
+  <script>
+    // Square's redirect_url includes ?subscriptionId=... (see
+    // server/index.js's createPaymentLink call). Purely informational on
+    // this page (the real tier flip already happened via the webhook
+    // before this page ever loads, so there is nothing here that needs to
+    // succeed for the upgrade to have worked. Shown only if present, never
+    // required.
+    (function () {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const subId = params.get("subscriptionId");
+        if (subId) {
+          document.getElementById("subIdValue").textContent = subId;
+          document.getElementById("subIdLine").hidden = false;
+        }
+      } catch (_) { /* purely cosmetic, fine to skip silently */ }
+    })();
+  </script>
+</body>
+</html>

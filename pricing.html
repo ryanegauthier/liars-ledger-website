@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Liar's Ledger pricing: free tier with daily scans, pro tier for unlimited access. Upgrade in seconds.">
+  <title>Pricing | Liar's Ledger</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/pricing.css">
+</head>
+<body data-page="pricing">
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div id="chrome-header"></div>
+  <script src="js/site-config.js"></script>
+  <script src="js/chrome-templates.js"></script>
+  <script src="js/chrome-inject.js" data-chrome="header"></script>
+
+  <main id="main-content">
+    <div class="page-hero">
+      <div class="container lg:px-16">
+        <p class="eyebrow">Section 03 · Pricing</p>
+        <h1>Simple, honest pricing.</h1>
+        <p class="sub">Free for readers. Pro for power users. No hidden fees, no data sold.</p>
+      </div>
+    </div>
+
+    <section class="pricing-page">
+      <div class="container lg:px-16">
+
+        <div class="upgrade-note">
+          <strong>Upgrading?</strong> Open the extension popup, expand the Account panel, and click Subscribe to Pro. Your token upgrades automatically, with no reinstall needed.
+          Lost your token or reinstalled? Recovery also happens in the Account panel; see the FAQ below.
+        </div>
+
+        <div class="tiers-wrap">
+
+          <div class="tier-card">
+            <h2>Free</h2>
+            <div class="tier-price">$0<span>/forever</span></div>
+            <ul>
+              <li><b>See the truth instantly.</b> Real-time politician detection and official roll-call votes, direct bill links, and interest group affiliations.</li>
+            </ul>
+            <a class="tier-cta" data-ll-link="install" target="_blank" rel="noopener noreferrer">Install Extension</a>
+          </div>
+
+          <div class="tier-card featured">
+            <span class="tier-badge">Most popular</span>
+            <h2>Pro</h2>
+            <div class="tier-price">$5<span>/month</span></div>
+            <ul>
+              <li><b>You believe politicians should be held accountable.</b> Everything in Free, plus up to 100 scans per day, an AI-generated "Verdict" that compares article claims to the voting record, and early access to new visual features.</li>
+            </ul>
+
+            <div class="sub-popup-cta">
+              <img class="sub-popup-img" src="img/popup-subscribe.png"
+                   alt="Extension popup showing the Subscribe to Pro button in the Account panel">
+              <p class="sub-popup-label">Open extension → Account panel → Subscribe to Pro</p>
+            </div>
+          </div>
+
+          <div class="tier-card">
+            <h2>Support</h2>
+            <div class="tier-price">♦<span>&nbsp;Pay what you want</span></div>
+            <ul>
+              <li><b>Keep the truth free.</b> No perks are gated behind this tier. Your contribution simply keeps the Free tier's daily limit high and helps cover server and AI costs.</li>
+            </ul>
+            <a class="tier-cta" href="#support">Support the project</a>
+          </div>
+
+        </div>
+
+        <div class="bottom-row">
+        <div class="faq">
+          <h3>Common questions</h3>
+          <p style="font-size:0.8rem;color:rgba(243,238,226,0.55);margin:-0.6rem 0 1.2rem;">
+            Pricing and billing questions are below. For everything else, including how detection works, sourcing, and privacy, see the <a href="/faq" style="color:var(--accent);">full FAQ</a>.
+          </p>
+
+          <div class="faq-item">
+            <p class="faq-q">How does the free daily limit work?</p>
+            <p class="faq-a">Each installation gets a random anonymous token. Free tier's daily scan allowance is dynamic: it starts at 30 scans/day at launch and scales down as the user base grows, to keep server costs sustainable. Pro gets a separate, flat allowance of 100 scans/day that doesn't scale down. Both reset at midnight UTC, and the current limit is always shown in the extension popup.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">What is an "anonymous token"?</p>
+            <p class="faq-a">A random UUID generated locally on first install. It is not linked to your name, email, or any personal information. See the <a href="/privacy.html">privacy policy</a> for full details.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">How does payment work?</p>
+            <p class="faq-a">Payments are processed by Square. Your card details go directly to Square, and we never see them. Upon successful payment, your token is automatically upgraded to Pro.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">Can I cancel anytime?</p>
+            <p class="faq-a">Yes. Cancel through Square and your Pro access remains until the end of the billing period. After that, your token reverts to Free tier.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">I lost my token or reinstalled. How do I get Pro back?</p>
+            <p class="faq-a">Open the extension popup → <strong>Account panel</strong> → <strong>Restore Pro after reinstalling</strong>. Paste the order number from your Square receipt email and your Pro status will be restored to that token automatically. We never collected your email, so we can't look this up for you here on the website. The order number is the only thing that links your payment back to your install.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">Is the extension open source?</p>
+            <p class="faq-a">Yes - <a href="https://github.com/ryanegauthier/liars-ledger" target="_blank" rel="noopener">github.com/ryanegauthier/liars-ledger</a>. You can audit exactly what data is sent and when.</p>
+          </div>
+        </div>
+
+        <div class="donate-section" id="support"><!-- closes .faq -->
+          <p class="donate-eyebrow">Support the project</p>
+          <h3>Free to use.<br>Costs real money to run.</h3>
+          <p class="donate-body">
+            An informed voter is harder to manipulate. Liar's Ledger exists to make the official record as easy to access as the spin. <strong>It's free, open source, and built to stay that way</strong>, with your help.
+          </p>
+          <p class="donate-body">
+            Liar's Ledger has no investors, no ads, and no data to sell. Every scan runs through real AI models and official government APIs, and that costs money. Donations and Pro subscriptions are the only thing keeping the free tier alive and the daily limit high. If you believe voters deserve instant, nonpartisan access to their politicians' voting records, this is how you help make that sustainable.
+          </p>
+          <div class="donate-actions">
+            <a class="donate-btn" href="https://square.link/u/V4ByGD80" target="_blank" rel="noopener">
+              ♦ &nbsp;Donate via Square
+            </a>
+            <a class="donate-btn" href="https://liberapay.com/LiarsLedger/donate" target="_blank" rel="noopener">
+              ♥ &nbsp;Donate on Liberapay
+            </a>
+            <a class="donate-btn" href="https://github.com/ryanegauthier/liars-ledger" target="_blank" rel="noopener">
+              ★ &nbsp;Star on GitHub
+            </a>
+          </div>
+          <p class="donate-payment-note">
+            We accept donations through <strong>Square</strong> and <strong>Liberapay</strong>.
+            Liberapay is a European, open source, nonprofit platform that processes payments via Mangopay and PayPal.
+            </p>
+        </div><!-- closes .donate-section -->
+        </div><!-- closes .bottom-row -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="chrome-footer"></div>
+  <script src="js/chrome-inject.js" data-chrome="footer"></script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

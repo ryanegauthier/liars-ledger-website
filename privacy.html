@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Liar's Ledger Privacy Policy - what data we collect, what we don't, and how we handle article text.">
+  <title>Privacy Policy | Liar's Ledger</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/privacy.css">
+</head>
+<body data-page="privacy">
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div id="chrome-header"></div>
+  <script src="js/site-config.js"></script>
+  <script src="js/chrome-templates.js"></script>
+  <script src="js/chrome-inject.js" data-chrome="header"></script>
+
+  <main id="main-content">
+  <section class="privacy-page">
+  <div class="page-hero">
+    <div style="max-width:760px;margin:0 auto">
+      <p class="eyebrow">Legal · Privacy</p>
+      <h1>Privacy Policy</h1>
+      <p class="last-updated">Last updated: June 14, 2026</p>
+    </div>
+  </div>
+
+
+  <div class="content-wrap">
+
+    <div class="summary-box">
+      <p><strong>The short version:</strong> Liar's Ledger does not collect your browsing history, store your article text, or sell any data. The extension reads article text temporarily to extract politician names and sends that text to our AI models for analysis. We don't log it, store it, or share it. To enable rate limiting, the extension generates a random anonymous ID on first install, it is not linked to your identity in any way. Pro subscribers are taken to Square's hosted checkout; we never see your card details, email address, or any contact info you provide to Square. We retain only an opaque reference linking your Square transaction to your anonymous token for account recovery. That's the whole policy.</p>
+    </div>
+
+    <div class="policy-section">
+      <span class="section-num">01</span>
+      <h2>What Liar's Ledger does</h2>
+      <p>Liar's Ledger is a Chrome browser extension that detects politicians mentioned in news articles and surfaces their official congressional voting records in real time. When you click "Scan This Page," the extension reads the text of the current article and sends it to our backend service at api.liarsledger.com for analysis.</p>
+      <p>The extension does not run passively or collect data in the background. It only activates when you explicitly click the Scan button.</p>
+    </div>
+
+    <div class="policy-section">
+      <span class="section-num">02</span>
+      <h2>What data we collect</h2>
+      <p>We collect as little as possible to make the product work.</p>
+      <p><strong>Article text</strong>: When you scan a page, the text of that article is sent to our backend (api.liarsledger.com) and forwarded to two AI services (Anthropic Claude and Mistral AI) for politician and claim extraction. This text is processed in real time and is not stored by Liar's Ledger.</p>
+      <p><strong>API usage logs</strong>: Our backend server (hosted on Render) maintains standard server logs including IP addresses and request timestamps for security and rate-limiting purposes. These logs are retained for 30 days and are not shared with third parties.</p>
+      <p><strong>Anonymous installation token</strong>: On first install, the extension generates a random UUID (e.g. <code>a3f9&hellip;c21b</code>) and registers it with our backend at api.liarsledger.com. This token is stored in your browser's sync storage and sent with every scan request as an HTTP header. It is used solely to enforce daily scan limits and, for Pro subscribers, to confirm an active subscription. The token is not linked to your name, email address, IP address, or any other identifying information. No account is required. You can reset it at any time by reinstalling the extension (Pro subscribers can recover access via their Square receipt, see §03).</p>
+      <p><strong>Tier status</strong>: Our backend stores each token alongside a tier flag (<code>free</code> or <code>pro</code>) and a daily scan count that resets automatically at midnight UTC. This is the only persistent data we retain about a token.</p>
+      <div class="highlight">
+        We do not collect: browsing history, article URLs, user identity, location data, or any information about articles you read without scanning.
+      </div>
+    </div>
+
+    <div class="policy-section">
+      <span class="section-num">03</span>
+      <h2>Payment processing</h2>
+      <p>Pro subscriptions are processed by <strong>Square</strong> (squareup.com). When you subscribe, you are taken to a checkout page hosted by Square. Square collects the payment and contact information it requires to process your transaction (such as a card and contact details). <strong>We never see or store this information ourselves.</strong></p>
+      <p>To connect your payment to your anonymous token without collecting any personal information on our end, we retain a reference linking your Square transaction (specifically, your Square customer and subscription identifiers) to your anonymous token. This reference is used solely to:</p>
+      <ul style="margin: 0.5rem 0 0.5rem 1.4rem; color: inherit;">
+        <li>Activate Pro features after payment</li>
+        <li>Restore your Pro status if you lose your token and provide proof of a completed payment (such as your order or receipt reference)</li>
+      </ul>
+      <p>This reference does not include your name, email address, payment details, or any other information Square collects, only an internal identifier pairing. This applies to Pro subscribers only; free users are unaffected.</p>
+      <p>Upon successful payment, Square notifies our backend via a webhook. We use that notification to flip your token's tier from <code>free</code> to <code>pro</code>. If your subscription lapses or is canceled, your token reverts to Free tier automatically.</p>
+      <p>Square's privacy policy governs their handling of your payment and account data: <a href="https://squareup.com/us/en/legal/general/privacy" target="_blank" rel="noopener">squareup.com/us/en/legal/general/privacy</a>.</p>
+    </div>
+
+    <div class="policy-section">
+      <span class="section-num">04</span>
+      <h2>Third-party services</h2>
+      <p>Liar's Ledger routes requests through several external services to provide voting record data. When you scan an article, data may be sent to:</p>
+      <ul>
+        <li><strong>Anthropic Claude</strong> (api.anthropic.com): AI claim extraction. Article text is sent for analysis. Anthropic's privacy policy applies to their handling of this data.</li>
+        <li><strong>Mistral AI</strong> (api.mistral.ai): AI claim extraction. Article text is sent for analysis. Mistral's privacy policy applies.</li>
+        <li><strong>Congress.gov API</strong> (api.congress.gov): Official U.S. government source for legislative records. No article content is sent; only politician identifiers are sent.</li>
+        <li><strong>GovTrack</strong> (govtrack.us): Roll-call vote history. No article content is sent.</li>
+        <li><strong>VoteSmart</strong> (app.votesmart-api.org): Interest group ratings and vote history. No article content is sent.</li>
+        <li><strong>Square</strong> (squareup.com): Payment processing for Pro subscriptions. Payment details are entered directly on Square's platform and are never transmitted to or stored by Liar's Ledger.</li>
+      </ul>
+      <p>All third-party API calls are made server-side through our backend proxy. Your API keys are never exposed to the extension or your browser.</p>
+    </div>
+
+    <div class="policy-section">
+      <span class="section-num">05</span>
+      <h2>What we don't do</h2>
+      <ul>
+        <li>We do not sell data to advertisers or data brokers</li>
+        <li>We do not store payment information; card details never reach our servers</li>
+        <li>We do not track which articles you read</li>
+        <li>We do not store the content of articles you scan</li>
+        <li>We do not collect names, email addresses, or any personally identifiable information</li>
+        <li>We do not use cookies or cross-site tracking</li>
+        <li>We do not share data with political organizations or campaigns</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <span class="section-num">06</span>
+      <h2>Data storage and security</h2>
+      <p>Scan results are stored temporarily in your browser's session storage (cleared when you close Chrome) so the sidebar can display results without re-fetching. This data never leaves your browser and is not accessible to us.</p>
+      <p>Our backend service runs on Render (render.com), a U.S.-based cloud hosting provider. Standard security practices apply including HTTPS-only communication and environment-variable key management.</p>
+    </div>
+
+    <div class="policy-section">
+      <span class="section-num">07</span>
+      <h2>Open source</h2>
+      <p>The Liar's Ledger extension is open source. You can audit exactly what data is sent and when by reviewing the source code at <a href="https://github.com/ryanegauthier/liars-ledger" target="_blank" rel="noopener">github.com/ryanegauthier/liars-ledger</a>. The backend proxy server code is also included in that repository under the <code>server/</code> directory.</p>
+    </div>
+
+    <div class="policy-section">
+      <span class="section-num">08</span>
+      <h2>Children's privacy</h2>
+      <p>Liar's Ledger is not directed at children under 13 and we do not knowingly collect any information from children.</p>
+    </div>
+
+    <div class="policy-section">
+      <span class="section-num">09</span>
+      <h2>Changes to this policy</h2>
+      <p>If we make material changes to this privacy policy, we will update the "Last updated" date at the top of this page. Continued use of the extension after changes constitutes acceptance of the updated policy.</p>
+    </div>
+
+    <div class="contact-block">
+      <h3>Questions?</h3>
+      <p>If you have questions about this privacy policy or how Liar's Ledger handles data, contact us at:</p>
+      <p><a href="mailto:privacy@liarsledger.com">privacy@liarsledger.com</a></p>
+    </div>
+
+  </div>
+  </section>
+  </main>
+
+  <div id="chrome-footer"></div>
+  <script src="js/chrome-inject.js" data-chrome="footer"></script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

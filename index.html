@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Liar's Ledger detects politicians in news articles and surfaces official voting records in real time.">
+  <title>Liar's Ledger | Real votes. Real records. Right now.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pricing.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div id="chrome-header"></div>
+  <script src="js/site-config.js"></script>
+  <script src="js/chrome-templates.js"></script>
+  <script src="js/chrome-inject.js" data-chrome="header"></script>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container lg:px-16 hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Browser extension · Chrome &amp; Firefox</p>
+          <h1>
+            <span class="title-line">The record</span>
+            <span class="title-line">doesn't lie.</span>
+            <span class="title-line title-rust"><span class="gold-underline">Politicians do.</span></span>
+          </h1>
+          <p class="lead">
+            Real votes. Real records. Right now. Liar's Ledger reads any article you're on, spots the politician,
+            and surfaces their official congressional voting record before you finish the paragraph.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" data-ll-link="install" target="_blank" rel="noopener noreferrer" aria-label="Install Liar's Ledger browser extension">Install Extension</a>
+          </div>
+          <p class="sources">Sourced by <span>congress.gov</span> <span>house.gov</span> <span>senate.gov</span></p>
+        </div>
+        <aside class="hero-visual" aria-label="Extension demo video">
+          <div class="video-frame">
+            <iframe id="hero-video-iframe" data-video-id="7611cfd7e80c4b02b501358ec0437480" src="https://www.loom.com/embed/7611cfd7e80c4b02b501358ec0437480" frameborder="0" allow="fullscreen" allowfullscreen loading="lazy" title="Liar's Ledger extension demo"></iframe>
+          </div>
+          <button type="button" class="video-note" data-video-play="hero-video-iframe">▶ Watch the video to see it in action.</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section metrics">
+      <div class="container lg:px-16 metric-grid">
+        <article class="metric">
+          <p class="metric-value">20 yrs</p>
+          <p class="metric-label">Of congressional data (110th–119th)</p>
+        </article>
+        <article class="metric">
+          <p class="metric-value">1,340</p>
+          <p class="metric-label">Congress members scanned</p>
+        </article>
+        <article class="metric">
+          <p class="metric-value">240M</p>
+          <p class="metric-label">Age-eligible voters</p>
+        </article>
+        <article class="metric">
+          <p class="metric-value">0</p>
+          <p class="metric-label">Data sold</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section">
+      <div class="container lg:px-16">
+        <div class="how-head">
+          <div>
+            <p class="section-label">Section 02 · How it works</p>
+            <h2>Three steps. Zero spin.</h2>
+          </div>
+          <p class="section-intro">Liar's Ledger works in the background. You read like you always do, and the receipts show up next to the names.</p>
+        </div>
+        <div class="card-grid steps-grid">
+          <article class="card step">
+            <div class="step-top">
+              <span class="step-num">01</span>
+              <span class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 5h7a3 3 0 0 1 3 3v11H7a3 3 0 0 0-3 3z"></path>
+                  <path d="M20 5h-7a3 3 0 0 0-3 3v11h7a3 3 0 0 1 3 3z"></path>
+                </svg>
+              </span>
+            </div>
+            <h3>Reads the article</h3>
+            <p>Open any story, op-ed, or transcript. The extension scans passively while you read.</p>
+            <p class="step-tag">Local-first scan</p>
+          </article>
+          <article class="card step">
+            <div class="step-top">
+              <span class="step-num">02</span>
+              <span class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="6"></circle>
+                  <path d="m20 20-4.2-4.2"></path>
+                </svg>
+              </span>
+            </div>
+            <h3>Finds the politician</h3>
+            <p>Names are matched against the official congressional roster, including aliases and shorthand.</p>
+            <p class="step-tag">Roster-matched</p>
+          </article>
+          <article class="card step">
+            <div class="step-top">
+              <span class="step-num">03</span>
+              <span class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"></path>
+                  <path d="M14 2v5h5"></path>
+                  <circle cx="11.5" cy="14" r="2.6"></circle>
+                  <path d="m13.3 15.8 2 2"></path>
+                </svg>
+              </span>
+            </div>
+            <h3>Shows the record</h3>
+            <p>A ledger card opens with roll-call votes and links directly to official congressional records.</p>
+            <p class="step-tag">Sourced &amp; linked</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section pricing">
+      <div class="container lg:px-16">
+        <div class="how-head">
+          <div>
+            <p class="section-label">Section 03 · Pricing</p>
+            <h2>Free for readers. Pro for power users.</h2>
+          </div>
+          <p class="section-intro">No hidden fees, no data sold. Full comparison and checkout on the <a href="/pricing">pricing page</a>.</p>
+        </div>
+
+        <div class="tiers-wrap">
+          <article class="tier-card">
+            <h2>Free</h2>
+            <div class="tier-price">$0<span>/forever</span></div>
+            <ul>
+              <li><b>See the truth instantly.</b> Real-time politician detection and official roll-call votes, direct bill links, and interest group affiliations.</li>
+            </ul>
+          </article>
+
+          <article class="tier-card featured">
+            <span class="tier-badge">Most popular</span>
+            <h2>Pro</h2>
+            <div class="tier-price">$5<span>/month</span></div>
+            <ul>
+              <li><b>You believe politicians should be held accountable.</b> Everything in Free, plus up to 100 scans per day, an AI-generated "Verdict" that compares article claims to the voting record, and early access to new visual features.</li>
+            </ul>
+          </article>
+
+          <article class="tier-card">
+            <h2>Support</h2>
+            <div class="tier-price">♦<span>&nbsp;Pay what you want</span></div>
+            <ul>
+              <li><b>Keep the truth free.</b> No perks are gated behind this tier. Your contribution simply keeps the Free tier's daily limit high and helps cover server and AI costs.</li>
+            </ul>
+          </article>
+        </div>
+
+        <p style="text-align: center; margin-top: 1.5rem;">
+          <a class="btn" href="/pricing">See full comparison &amp; subscribe →</a>
+        </p>
+      </div>
+
+    </section>
+
+
+    <section id="about" class="section">
+      <div class="container lg:px-16 about-grid">
+        <figure class="about-visual">
+          <img src="https://images.remixer.ai/ai/1272900/content/duotone-deep-navy-and-gold-photograph-of-empty-congressional-chamber-rows-of-wooden-desks-shadowed-archival-feel" alt="Congressional chamber in dark duotone style">
+          <figcaption>118th Congress · public record</figcaption>
+        </figure>
+        <div class="about-content">
+          <p class="section-label">Section 04 · About</p>
+          <h2>We don't pick sides. We pick votes.</h2>
+          <p>
+            We don't pick sides. We pick votes. Liar's Ledger does not editorialize, rank politicians, or add partisan
+            framing. It shows how officials voted, linked back to congress.gov, house.gov, and senate.gov.
+          </p>
+          <p>
+            The free Ledger is non-partisan by design. It shows how officials voted,
+            sponsored bills, cosponsored bills, roll-call votes, interest group
+            ratings all linked directly back to congress.gov and VoteSmart. No
+            commentary. No ranking. No spin. If it's not in the official record, it's
+            not in the Ledger.
+          </p>
+          <p>
+            The extension is open source so anyone can audit detection rules, source matching, and record delivery.
+            If it is not in the official record, it is not in the ledger.
+          </p>
+          <aside class="about-callout">
+            <article>
+              <span class="about-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                  <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                  <path d="M7 21h10"></path>
+                  <path d="M12 3v18"></path>
+                  <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path>
+                </svg>
+              </span>
+              <h3>Non-partisan by construction</h3>
+              <p>No editorial layer. No commentary. The record is the record.</p>
+            </article>
+            <article>
+              <span class="about-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m18 16 4-4-4-4"></path>
+                  <path d="m6 8-4 4 4 4"></path>
+                  <path d="m14.5 4-5 16"></path>
+                </svg>
+              </span>
+              <h3>Open source</h3>
+              <p>Every line of code that touches a vote is publicly auditable.</p>
+            </article>
+            <article>
+              <span class="about-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path>
+                  <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
+                  <circle cx="11.5" cy="14.5" r="2.5"></circle>
+                  <path d="M13.3 16.3 15 18"></path>
+                </svg>
+              </span>
+              <h3>Source-of-truth only</h3>
+              <p>We cite congress.gov directly. If it is not in the record, it is not in the ledger.</p>
+            </article>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-banner">
+      <div class="container lg:px-16 cta-wrap">
+        <div class="cta-grid">
+          <div>
+            <h2>Stop arguing. Start citing.</h2>
+            <p>Two clicks. Free forever. Works on the news sites you already read.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn" data-ll-link="install" target="_blank" rel="noopener noreferrer" aria-label="Install Liar's Ledger browser extension">Install Extension</a>
+            <a class="btn btn-ghost" data-ll-link="github" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="chrome-footer"></div>
+  <script src="js/chrome-inject.js" data-chrome="footer"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

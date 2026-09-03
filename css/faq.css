@@ -1,0 +1,67 @@
+/* FAQ page — light page, narrow prose column (same pattern as privacy.css) */
+
+.faq-page {
+  background: var(--bg);
+}
+
+.faq-page .content-wrap {
+  padding-inline: 0;
+}
+
+.faq-group {
+  margin-bottom: 3rem;
+}
+
+.faq-group:last-child {
+  margin-bottom: 0;
+}
+
+.faq-group h2 {
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.faq-group .group-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: -0.2rem 0 1.2rem;
+}
+
+.faq-group .group-note a {
+  color: var(--accent-soft);
+}
+
+.faq-page .faq-item {
+  border-top: 1px solid var(--border);
+  padding: 1.1rem 0;
+}
+
+.faq-page .faq-group:last-child .faq-item:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-page .faq-q {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.faq-page .faq-a {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.faq-page .faq-a a {
+  color: var(--accent-soft);
+}
+
+.faq-page .faq-a strong {
+  color: var(--text);
+}

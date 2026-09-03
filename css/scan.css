@@ -1,0 +1,321 @@
+/** /scan page - form, status states, and the free-tier record cards.
+ * Record-card classes (.ll-*) are a light-theme port of report.html's
+ * dark-theme inline <style> block (the extension's standalone report tab)
+ * - same structure and class names, remapped onto this site's existing
+ * --bg/--navy/--text/--muted/--accent/--alert/--teal tokens from
+ * css/styles.css instead of report.html's own local dark palette. See
+ * CHANGELOG.md's v0.17.13 entry in the liars-ledger repo.
+ */
+
+.scan-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ── Scan form ─────────────────────────────────────────────────────────── */
+
+.scan-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.scan-form-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.scan-form-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.scan-form-row input[type="url"] {
+  flex: 1 1 320px;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  border: 2px solid var(--navy);
+  background: #fff;
+  color: var(--text);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.82rem;
+}
+
+.scan-form-row input[type="url"]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.scan-form-row .btn {
+  flex: 0 0 auto;
+}
+
+.scan-form-row .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.scan-remaining {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.66rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+/* ── Status states (loading / error / empty / rate-limited) ──────────────── */
+
+.scan-status {
+  padding: 14px 20px;
+  border-left: 3px solid var(--muted);
+  background: var(--bg-soft);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.76rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.scan-status--loading  { border-left-color: var(--accent); }
+.scan-status--error    { border-left-color: var(--alert); background: rgba(199, 58, 37, 0.08); }
+.scan-status--empty    { border-left-color: var(--muted); }
+.scan-status--rate-limited {
+  border-left-color: var(--accent);
+  background: rgba(200, 169, 110, 0.1);
+}
+
+/* ── Results ───────────────────────────────────────────────────────────── */
+
+.scan-results {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ll-politician-card {
+  border: 1px solid rgba(18, 31, 68, 0.14);
+  background: var(--bg-card);
+}
+
+.ll-politician-header {
+  border-top: 3px solid var(--accent);
+  padding: 20px 24px;
+}
+
+.ll-eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.58rem;
+  color: var(--accent-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 4px;
+}
+
+.ll-name {
+  font-family: Oswald, sans-serif;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.ll-party-pill {
+  font-size: 0.65rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  border: 1px solid;
+  padding: 1px 5px;
+  vertical-align: middle;
+  position: relative;
+  top: -4px;
+  letter-spacing: 0.04em;
+}
+.ll-party-D { color: #2f5f85; border-color: rgba(47, 95, 133, 0.45); }
+.ll-party-R { color: #9c3c3c; border-color: rgba(156, 60, 60, 0.45); }
+.ll-party-I { color: var(--muted); border-color: var(--muted); }
+
+.ll-party-meta {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.ll-party-meta a { color: var(--accent-soft); }
+
+.ll-section {
+  padding: 0 24px 24px;
+}
+
+.ll-section-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.58rem;
+  color: var(--accent-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid rgba(200, 169, 110, 0.35);
+  padding: 20px 0 6px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.ll-section-source {
+  font-size: 0.5rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+.ll-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 8px 16px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(18, 31, 68, 0.1);
+  align-items: start;
+}
+
+.ll-row-left {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.ll-row-left.ll-bill-role { color: var(--accent-soft); }
+
+.ll-row-left-sub {
+  font-size: 0.56rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.ll-row-right {
+  font-size: 0.78rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.ll-row-sub {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.58rem;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.ll-vote-yea       { color: var(--teal); }
+.ll-vote-nay        { color: var(--alert); }
+.ll-vote-notvoting { color: var(--muted); }
+
+.ll-rating-row {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 200px) 1fr;
+  gap: 8px 16px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(18, 31, 68, 0.1);
+  align-items: center;
+}
+
+.ll-rating-score {
+  font-family: Oswald, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.ll-rating-year {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.48rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.ll-rating-bar-wrap {
+  height: 4px;
+  background: rgba(18, 31, 68, 0.08);
+  width: 100%;
+  margin-top: 4px;
+}
+
+.ll-rating-bar { height: 4px; }
+
+.ll-rating-name {
+  font-size: 0.76rem;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.ll-rating-cats {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.54rem;
+  color: var(--muted);
+}
+
+.ll-rating-text {
+  font-size: 0.62rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.ll-empty {
+  font-size: 0.68rem;
+  color: var(--muted);
+  padding: 12px 0;
+  font-style: italic;
+}
+
+/* ── Bottom install CTA ────────────────────────────────────────────────── */
+
+.scan-install-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--navy);
+  border: 2px solid var(--navy);
+}
+
+.scan-install-cta-eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.64rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+}
+
+.scan-install-cta h2 {
+  font-family: Oswald, sans-serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: #f2eee2;
+  margin-bottom: 0.5rem;
+}
+
+.scan-install-cta-copy p:not(.scan-install-cta-eyebrow) {
+  color: rgba(242, 238, 226, 0.7);
+  max-width: 46ch;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.scan-install-cta-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .ll-row,
+  .ll-rating-row {
+    grid-template-columns: 1fr;
+  }
+}

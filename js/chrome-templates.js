@@ -18,6 +18,7 @@ window.LL_CHROME = {
     </button>
     <nav id="primary-nav" class="primary-nav" aria-label="Primary">
       <a href="/#how-it-works" data-nav="how">How It Works</a>
+      <a href="/scan" data-nav="scan">Try It Free</a>
       <a href="/pricing" data-nav="pricing">Pricing</a>
       <a href="/faq" data-nav="faq">FAQ</a>
       <a href="/#about" data-nav="about">About</a>
@@ -46,6 +47,7 @@ window.LL_CHROME = {
       <div>
         <p class="footer-heading">Product</p>
         <a href="/#how-it-works">How it works</a>
+        <a href="/scan">Try it free</a>
         <a href="/pricing">Pricing</a>
         <a href="/faq">FAQ</a>
         <a data-ll-link="install" target="_blank" rel="noopener noreferrer">Install</a>

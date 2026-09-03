@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Paste any news article URL and see the official congressional voting records for the politicians mentioned - free, no install required.">
+  <title>Scan Any Article Free | Liar's Ledger</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/scan.css">
+</head>
+<body data-page="scan">
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div id="chrome-header"></div>
+  <script src="js/site-config.js"></script>
+  <script src="js/chrome-templates.js"></script>
+  <script src="js/chrome-inject.js" data-chrome="header"></script>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <p class="eyebrow">Free · No install required</p>
+        <h1>Scan any article.</h1>
+        <p class="sub">Paste a link to a news article. We'll spot any current member of Congress mentioned and show their official voting record - same free-tier data the browser extension shows, right here.</p>
+      </div>
+    </section>
+
+    <div class="content-wrap scan-page">
+
+      <form id="scanForm" class="scan-form" autocomplete="off">
+        <label for="scanUrlInput" class="scan-form-label">Article URL</label>
+        <div class="scan-form-row">
+          <input
+            id="scanUrlInput"
+            name="url"
+            type="url"
+            inputmode="url"
+            placeholder="https://example.com/some-political-news-story"
+            required
+          >
+          <button id="scanSubmitBtn" class="btn" type="submit">Scan Article</button>
+        </div>
+        <p id="scanRemaining" class="scan-remaining" aria-live="polite"></p>
+      </form>
+
+      <div id="scanStatus" class="scan-status" aria-live="polite" hidden></div>
+
+      <div id="scanResults" class="scan-results" hidden></div>
+
+      <div class="scan-install-cta">
+        <div class="scan-install-cta-copy">
+          <p class="scan-install-cta-eyebrow">Want this on every article, automatically?</p>
+          <h2>Get the extension.</h2>
+          <p>No pasting links - the extension reads the page you're already on and surfaces the record instantly, plus AI claim-checking on Pro.</p>
+        </div>
+        <div class="scan-install-cta-actions">
+          <a class="btn" data-ll-link="install" target="_blank" rel="noopener noreferrer" aria-label="Install Liar's Ledger browser extension">Install Extension</a>
+          <a class="btn btn-ghost" href="/pricing">See Pricing</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="chrome-footer"></div>
+
+  <!-- Orchestration + browser-environment shims - must load before the
+       vendor/*.js files below, which reference window.browser, CONFIG,
+       logger, safeSessionSet, and authHeaders() at call time (not at
+       parse time), but defining them first keeps load order unambiguous.
+       See js/scan.js's header comment. -->
+  <script src="js/scan.js"></script>
+
+  <!-- Copied, unmodified, from ryanegauthier/liars-ledger's src/*.js -
+       same load order background.js uses via importScripts (see that
+       repo's CLAUDE.md). Do not edit these files here; see their own
+       header comments. -->
+  <script src="js/vendor/ll-topic-match.js"></script>
+  <script src="js/vendor/ll-keywords.js"></script>
+  <script src="js/vendor/ll-llm.js"></script>
+  <script src="js/vendor/ll-api.js"></script>
+  <script src="js/vendor/ll-votesmart.js"></script>
+  <script src="js/vendor/ll-lookup.js"></script>
+
+  <script src="js/chrome-inject.js" data-chrome="footer"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

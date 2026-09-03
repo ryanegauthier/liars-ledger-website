@@ -4,3 +4,8 @@ Thumbs.db
 .env
 .env.local
 node_modules/
+
+# Internal planning / working docs — not part of the public site
+liars-ledger-project-checklist.md
+scan-page-claude-code-prompt.md
+scan-page-mockup.html
